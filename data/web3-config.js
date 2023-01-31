@@ -7,6 +7,8 @@ const web3 = new Web3(POLYGON_TEST);
 
 const sha3 = web3.utils.sha3("init()").substring(0, 10);
 
+// console.log(sha3);
+
 module.exports = {
   web3,
   sha3,
