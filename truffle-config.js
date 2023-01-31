@@ -13,8 +13,11 @@ module.exports = {
       skipDryRun: true,
     },
   },
+
   contracts_build_directory: "./data/rawABI",
+
   mocha: {},
+
   compilers: {
     solc: {
       version: "pragma",
