@@ -20,3 +20,7 @@ PRIVATE_KEY=
 #Rpc_URL
 POLYGON_TEST=
 ```
+
+## Proxy Contract Deploy
+
+- `npm run deployProxy`
