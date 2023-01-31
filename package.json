@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/in63119/proxyContract_final#readme",
   "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.5",
     "dotenv": "^16.0.3",
-    "truffle": "^5.7.4"
+    "path": "^0.12.7",
+    "web3": "^1.8.2"
   }
 }
