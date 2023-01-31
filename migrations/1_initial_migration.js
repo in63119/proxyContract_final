@@ -19,7 +19,7 @@ module.exports = async function (deployer, network) {
     console.log(" ");
     console.log("------------- Proxy Contract를 배포합니다. --------------");
     console.log(" ");
-    await deployer.deploy(InProxy, InNFTContract.address, sha3);
+    await deployer.deploy(InProxy, sha3, InNFTContract.address);
     const InProxyContract = await InProxy.deployed();
 
     console.log(" ");
