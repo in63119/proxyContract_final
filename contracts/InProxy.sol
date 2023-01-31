@@ -2,23 +2,24 @@
 pragma solidity 0.8.4;
 
 contract InProxy {
-    // Storage = "0xc5f16f0fcc639fa48a6947836d9850f504798523bf8c9a3a87d5876cf622bcf7"
-    constructor(bytes memory constructData, address contractLogic) {
-        // save the code address
-        assembly { // solium-disable-line
-            sstore(0xc5f16f0fcc639fa48a6947836d9850f504798523bf8c9a3a87d5876cf622bcf7, contractLogic)
+    constructor(bytes memory constructData, address contractLogic) { 
+        assembly { 
+            sstore(0x0ace2c25bb383249161e7ce2b603cc2099f18f7cefd966581720af688cca9045, contractLogic)
         }
-        (bool success, bytes memory result ) = contractLogic.delegatecall(constructData); // solium-disable-line
+        (bool success, bytes memory result ) = contractLogic.delegatecall(constructData); 
         require(success, "Construction failed");
     }
 
     fallback() external payable {
-        assembly { // solium-disable-line
-            let contractLogic := sload(0xc5f16f0fcc639fa48a6947836d9850f504798523bf8c9a3a87d5876cf622bcf7)
+        assembly {
+            let inNFT := sload(0x0ace2c25bb383249161e7ce2b603cc2099f18f7cefd966581720af688cca9045)
             calldatacopy(0x0, 0x0, calldatasize())
-            let success := delegatecall(sub(gas(), 10000), contractLogic, 0x0, calldatasize(), 0, 0)
+
+            let success := delegatecall(sub(gas(), 10000), inNFT, 0x0, calldatasize(), 0, 0)
+            
             let retSz := returndatasize()
             returndatacopy(0, 0, retSz)
+
             switch success
             case 0 {
                 revert(0, retSz)
