@@ -22,6 +22,8 @@ module.exports = async function (deployer, network) {
     await deployer.deploy(InProxy, sha3, InNFTContract.address);
     const InProxyContract = await InProxy.deployed();
 
+    await InNFTContract.setContractAddress(InProxyContract.address);
+
     console.log(" ");
     console.log("------------- ABI 파일을 만듭니다. --------------");
     console.log(" ");

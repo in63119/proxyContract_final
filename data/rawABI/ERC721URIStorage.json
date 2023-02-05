@@ -1888,8 +1888,8 @@
     "version": "0.8.4+commit.c7e474f2.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.11",
-  "updatedAt": "2023-01-31T07:41:23.324Z",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2023-02-04T05:16:16.271Z",
   "devdoc": {
     "details": "ERC721 token with storage based token URI management.",
     "kind": "dev",

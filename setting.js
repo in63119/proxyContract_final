@@ -9,10 +9,7 @@ const polygonTestNetRpcURL = process.env.POLYGON_TEST;
 const Web3 = require("web3");
 const web3 = new Web3(polygonTestNetRpcURL);
 
-const nftMetaData =
-  "https://gateway.pinata.cloud/ipfs/QmdSyMBmf5SaFxAsUuxCuwvL3iaW5SUXFKUPnZ7N5itG9p?_gl=1*19vjp7z*_ga*MTUzMTA0MTQzNC4xNjczNjE1Njcz*_ga_5RMPXG14TE*MTY3NTQ4NDM1Mi4yLjEuMTY3NTQ4NDM4NC4yOC4wLjA";
-
-const minting = async (tokenURI) => {
+const setting = async () => {
   // Contract data
   const {
     InNFTCA,
@@ -21,13 +18,13 @@ const minting = async (tokenURI) => {
     InProxyABI,
   } = require("./data/getAbiData");
   const InNftContract = new web3.eth.Contract(InNFTABI, InProxyCA).methods;
-  const mint = InNftContract.mintNFT(address, tokenURI).encodeABI();
+  const set = InNftContract.setContractAddress(InProxyCA).encodeABI();
 
   const SendTransactionForValue = async (data, to) => {
     await web3.eth.accounts
       .signTransaction(
         {
-          from: InProxyCA,
+          from: address,
           to: to,
           gas: 5000000,
           value: "0x0",
@@ -48,7 +45,7 @@ const minting = async (tokenURI) => {
       });
   };
 
-  await SendTransactionForValue(mint, InProxyCA);
+  await SendTransactionForValue(set, InProxyCA);
 };
 
-minting(nftMetaData);
+setting();
