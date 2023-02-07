@@ -25,3 +25,8 @@ npx hardhat run scripts/deploy.js
 
 3. Mint(이 부분은 컨트랙트를 다시 손봐야 할 듯)
    `INFT.safeMint('EOA ADDRESS')`
+
+## 명령어
+
+- 배포 : `npm run deploy`
+- 민팅 : `npm run minting`
