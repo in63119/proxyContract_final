@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "npx hardhat run scripts/deploy.js",
-    "minting": "node scripts/mint.js"
+    "minting": "node scripts/mint.js",
+    "upgrade": "node scripts/upgrade.js"
   },
   "keywords": [],
   "author": "",
