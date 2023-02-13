@@ -23,8 +23,8 @@ const makeData = (json, address) => {
 
 const makeInNFTData = async (address) => {
   makeFile(
-    "/artifacts/contracts/InNFT.sol/InNFT.json",
-    "/data/abi/InNFT.json",
+    "/artifacts/contracts/InProxyNFT.sol/InProxyNFT.json",
+    "/data/abi/InProxyNFT.json",
     address
   );
 };

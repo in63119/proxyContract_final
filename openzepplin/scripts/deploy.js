@@ -8,9 +8,9 @@ const hre = require("hardhat");
 const { makeInNFTData } = require("../data/makeData");
 
 async function main() {
-  const InNFT = await hre.ethers.getContractFactory("InNFT");
+  const InProxyNFT = await hre.ethers.getContractFactory("InProxyNFT");
 
-  const INFT = await upgrades.deployProxy(InNFT, { kind: "uups" });
+  const INFT = await upgrades.deployProxy(InProxyNFT, { kind: "uups" });
 
   const proxyCA = INFT.address;
 

@@ -10,7 +10,7 @@
   "impls": {
     "832e7929730a68b4659868ff38bf2374f55faa04ffcf513513a3dbc3a564dd70": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x7023eb5e8149add091481945b290d5cd8f29a94db5a97c478beed65e8aa9d20b",
+      "txHash": "0x7307c5bc2f408844f98b7eebdd73beba3e0ec8a8c91e2cc3f39048171e552c0f",
       "layout": {
         "solcVersion": "0.8.9",
         "storage": [
@@ -156,8 +156,8 @@
             "offset": 0,
             "slot": "351",
             "type": "t_struct(Counter)2433_storage",
-            "contract": "InNFT",
-            "src": "contracts/InNFT.sol:14"
+            "contract": "InProxyNFT",
+            "src": "contracts/InProxyNFT.sol:14"
           }
         ],
         "types": {
